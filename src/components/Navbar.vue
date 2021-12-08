@@ -2,18 +2,32 @@
   <header>
     <nav>
       <div id="navigation-container">
-        <img class="logo" src="../assets/logoipsum.svg" alt="" />
+        <router-link to="/"
+          ><img class="logo" src="../assets/logoipsum.svg" alt=""
+        /></router-link>
+
         <ul class="nav-bar">
-          <li>home</li>
-          <li>buy</li>
+          <li>
+            <router-link to="/Home">Home</router-link>
+          </li>
+          <li><router-link to="/Buy">Buy</router-link></li>
         </ul>
       </div>
     </nav>
+    <!-- <router-view></router-view> -->
   </header>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Navbar",
+  methods: {
+    logMessage() {
+      console.log("triggered");
+      console.log(this.$route.name);
+    },
+  },
+};
 </script>
 
 <style>
@@ -26,19 +40,18 @@ header {
 .nav-bar {
   display: flex;
   flex-direction: row;
-  padding: 12px 0;
   transition: 0.5s ease all;
-  margin: 0 auto;
+  margin: 0 20px;
   width: 470px;
   height: 75px;
   z-index: 1;
   justify-content: right;
 }
-ul li {
+li {
   list-style-type: none;
   padding: 10px 10px;
   text-transform: uppercase;
-  padding-top: 30px;
+  padding-right: 40px;
   text-align: center;
 }
 #navigation-container {
@@ -49,6 +62,13 @@ ul li {
   justify-content: space-between;
 }
 .logo {
-  padding-top: 0%;
+  padding-left: 40px;
+}
+li:hover {
+  border-bottom: 5px solid black;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 </style>

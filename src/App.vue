@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Navbar />
+    <Home />
   </div>
 </template>
 
 <script>
-import Navbar from "../src/components/Navbar";
+import Home from "../src/components/Home";
 
 export default {
   name: "App",
   components: {
-    Navbar,
+    Home,
   },
 };
 </script>
